@@ -69,7 +69,7 @@ export default function DraftApplications() {
   useEffect(() => {
     (async () => {
       const applicationData = await axios.get(
-        "http://44.206.163.98:3000/api/getDraftApplications",
+        "https://futurecity.majhailcollection.in/api/getUserApplicationsByStatus?status=draft",
         {
           headers: {
             "Content-Type": "application/json",
@@ -102,16 +102,17 @@ export default function DraftApplications() {
         </TableHead>
         <TableBody>
           {draftApplications.map((draft) => (
-            <TableRow key={draft.complexId}>
-              <Link
-                href={`http://localhost:3000/tenancy/${draft.complexId}/${draft.applicationId}`}
-              >
-                <TableCell>{draft.complexId}</TableCell>
-                <TableCell>{draft.name}</TableCell>
-                <TableCell>{draft.submitStatus}</TableCell>
-                <TableCell>{draft.region}</TableCell>
-                <TableCell align="right">{draft.applicationId}</TableCell>
-              </Link>
+            <TableRow
+              key={draft.complexId}
+              onClick={() => {
+                window.location.href = `http://localhost:3000/tenancy/${draft.complexId}/${draft.applicationId}`;
+              }}
+            >
+              <TableCell>{draft.complexId}</TableCell>
+              <TableCell>{draft.name}</TableCell>
+              <TableCell>{draft.submitStatus}</TableCell>
+              <TableCell>{draft.region}</TableCell>
+              <TableCell align="right">{draft.applicationId}</TableCell>
             </TableRow>
           ))}
         </TableBody>

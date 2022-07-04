@@ -99,7 +99,7 @@ export default function UploadDetails({
   React.useEffect(() => {
     (async () => {
       const isDraftApplication = await axios.get(
-        `http://44.206.163.98:3000/api/getApplicationById?applicationId=${applicationIdParams}`,
+        `https://futurecity.majhailcollection.in/api/getApplicationById?applicationId=${applicationIdParams}`,
         {
           headers: {
             "Content-Type": "application/json",

@@ -53,13 +53,16 @@ export default function Signin() {
 
   const responseGoogle = async (response) => {
     console.log(response);
-    const loginResp = await axios.post("http://44.206.163.98:3000/api/signup", {
-      userName: response.uv.Af,
-      userEmail: response.uv.gw,
-      socialKey: response.uv.gY,
-      signupType: "google",
-      userImage: response.uv.v0,
-    });
+    const loginResp = await axios.post(
+      "https://futurecity.majhailcollection.in/api/signup",
+      {
+        userName: response.uv.Af,
+        userEmail: response.uv.gw,
+        socialKey: response.uv.gY,
+        signupType: "google",
+        userImage: response.uv.v0,
+      }
+    );
     console.log(loginResp.data);
     if (loginResp.data.status === 200) {
       console.log("indise if block");

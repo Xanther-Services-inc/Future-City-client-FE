@@ -66,28 +66,9 @@ export default function LinearStepper({ children }) {
     }
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    if (activeStep === steps.length - 1) {
-      const submit = await axios.post(
-        "http://44.206.163.98:3000/api/submitApplication",
-        {
-          applicatioinId: applicationId,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-            "Access-Control-Allow-Headers":
-              "Content-Type, Authorization, Content-Length, X-Requested-With",
-            Authorization: cookies.get("token"),
-          },
-        }
-      );
-      window.location.href = "/status";
-    }
     setSkipped(newSkipped);
     const application = await axios.post(
-      "http://44.206.163.98:3000/api/createApplication",
+      "https://futurecity.majhailcollection.in/api/createApplication",
       {
         personalDetails: personalDetailsObj,
         bankDetails: bankDetailsObj,
@@ -111,6 +92,26 @@ export default function LinearStepper({ children }) {
     );
     setApplicationId(application.data.data.applicationId);
     console.log({ application });
+  };
+  const handleSubmit = async () => {
+    const submit = await axios.post(
+      "https://futurecity.majhailcollection.in/api/submitApplication",
+      {
+        applicationId: applicationId,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          "Access-Control-Allow-Headers":
+            "Content-Type, Authorization, Content-Length, X-Requested-With",
+          Authorization: cookies.get("token"),
+        },
+      }
+    );
+    console.log("submit", submit);
+    window.location.href = "/status";
   };
   console.log(uploadDocumentsObj);
   console.log(applicationStatus);
@@ -189,7 +190,7 @@ export default function LinearStepper({ children }) {
   useEffect(() => {
     (async () => {
       const housingDetails = await axios.get(
-        `http://44.206.163.98:3000/api/getComplexById?complexId=${id}`,
+        `https://futurecity.majhailcollection.in/api/getComplexById?complexId=${id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -258,8 +259,16 @@ export default function LinearStepper({ children }) {
               All steps completed - you&apos;re finished
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button onClick={handleReset}>Reset</Button>
+              <Box sx={{ flex: "auto" }} />
+              {/* <Button onClick={handleSubmit}>Submit</Button> */}
+
+              <Button
+                variant="contained"
+                sx={{ mr: 1, width: "30%" }}
+                onClick={handleSubmit}
+              >
+                Submit
+              </Button>
             </Box>
           </React.Fragment>
         ) : (

@@ -68,8 +68,8 @@ export default function OrderedApplication() {
   const [applications, setApplications] = useState([]);
   useEffect(() => {
     (async () => {
-      const allApplications = await axios.get(
-        "http://44.206.163.98:3000/api/getAllSubmittedApplications",
+      const applicationData = await axios.get(
+        `https://futurecity.majhailcollection.in/api/getUserApplicationsByStatus?status=submitted`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -81,8 +81,8 @@ export default function OrderedApplication() {
           },
         }
       );
-      console.log({ allApplications });
-      setApplications(allApplications.data.data);
+      console.log({ applicationData });
+      setApplications(applicationData.data.data);
     })();
   }, []);
   console.log(applications);
@@ -93,21 +93,19 @@ export default function OrderedApplication() {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
+            <TableCell>Complex Id</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Region</TableCell>
+            <TableCell>Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+          {applications.map((app, index) => (
+            <TableRow key={index}>
+              <TableCell>{app.complexId}</TableCell>
+              <TableCell>{app.name}</TableCell>
+              <TableCell>{app.region}</TableCell>
+              <TableCell>{app.submitStatus}</TableCell>
             </TableRow>
           ))}
         </TableBody>
