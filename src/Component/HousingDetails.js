@@ -27,10 +27,11 @@ export default function HousingDetails() {
   // const type = searchParams.get("type");
   console.log({ type });
   const cookies = new Cookies();
+
   useEffect(() => {
     (async () => {
       const housings = await axios.get(
-        `http://44.206.163.98:3000/api/getAllComplexByType?complexType=${type}`,
+        `https://futurecity.majhailcollection.in/api/getAllComplexByType?complexType=${type}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -42,6 +43,7 @@ export default function HousingDetails() {
           },
         }
       );
+
       setHousing(housings.data.data);
     })();
   }, [type]);
