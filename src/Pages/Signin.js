@@ -56,11 +56,11 @@ export default function Signin() {
     const loginResp = await axios.post(
       "https://futurecity.majhailcollection.in/api/signup",
       {
-        userName: response.uv.Af,
-        userEmail: response.uv.gw,
-        socialKey: response.uv.gY,
+        userName: response.profileObj.name,
+        userEmail: response.profileObj.email,
+        socialKey: response.googleId,
         signupType: "google",
-        userImage: response.uv.v0,
+        userImage: response.profileObj.imageUrl,
       }
     );
     console.log(loginResp.data);
