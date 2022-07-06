@@ -32,12 +32,17 @@ export default function Application({
             borderTop: "3px solid #bbb",
           }}
         />
-        <Typography variant="h4" align="center" style={{ marginTop: "20px" }}>
+        <Typography
+          variant="h4"
+          align="center"
+          style={{ marginTop: "20px", paddingBottom: "30px" }}
+        >
           Personal details
         </Typography>
         <div
           style={{
-            width: "70%",
+            width: "936px",
+            height: "618px",
             margin: "auto",
             padding: "20px",
             backgroundColor: "#FAFAFA",
@@ -55,7 +60,8 @@ export default function Application({
         </div>
         <div
           style={{
-            width: "70%",
+            width: "936px",
+            height: "402px",
             margin: "auto",
             marginTop: "5%",
             padding: "20px",

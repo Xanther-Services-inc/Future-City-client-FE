@@ -18,11 +18,11 @@ import Cookies from "universal-cookie";
 import ApplicationCard from "./ApplicationCard";
 
 const steps = [
-  "Select campaign settings",
-  "Create an ad group",
-  "Create an ad",
-  "Prepare for review & submit",
-  "Review & submit",
+  "Personal Info",
+  "Contact Info",
+  "Employment Info",
+  "Emergency Contact Info",
+  "Supporting Documents",
 ];
 
 export default function LinearStepper({ children }) {
@@ -47,6 +47,7 @@ export default function LinearStepper({ children }) {
     employmentDetailsObj,
     emergencyContactDetailsObj,
     uploadDocumentsObj,
+    applicationId,
   });
   const { id, applicationIdParams } = useParams();
   const cookies = new Cookies();
@@ -70,6 +71,7 @@ export default function LinearStepper({ children }) {
     const application = await axios.post(
       "https://futurecity.majhailcollection.in/api/createApplication",
       {
+        applicatioinId: JSON.stringify(applicationId),
         personalDetails: personalDetailsObj,
         bankDetails: bankDetailsObj,
         contactInfo: contactInfoObj,
@@ -77,7 +79,6 @@ export default function LinearStepper({ children }) {
         emergencyContactInfo: emergencyContactDetailsObj,
         documents: uploadDocumentsObj,
         complexId: id,
-        applicatioinId: applicationId,
       },
       {
         headers: {
@@ -111,7 +112,7 @@ export default function LinearStepper({ children }) {
       }
     );
     console.log("submit", submit);
-    window.location.href = "/status";
+    window.location.href = "/payment";
   };
   console.log(uploadDocumentsObj);
   console.log(applicationStatus);
@@ -255,16 +256,20 @@ export default function LinearStepper({ children }) {
         {renderComponent(activeStep)}
         {activeStep === steps.length ? (
           <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>
-              All steps completed - you&apos;re finished
+            <Typography sx={{ mt: 2, mb: 1, fontSize: "30px" }}>
+              All steps completed - Submit your application
             </Typography>
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Box sx={{ flex: "auto" }} />
+            <Box sx={{ display: "flex" }}>
+              {/* <Box sx={{ flex: "auto" }} /> */}
               {/* <Button onClick={handleSubmit}>Submit</Button> */}
 
               <Button
                 variant="contained"
-                sx={{ mr: 1, width: "30%" }}
+                sx={{
+                  margin: "auto",
+                  justifyContent: "center",
+                  display: "flex",
+                }}
                 onClick={handleSubmit}
               >
                 Submit

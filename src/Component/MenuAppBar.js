@@ -63,13 +63,20 @@ export default function MenuAppBar() {
               src={require("../logo2.png")}
               alt="logo"
               style={{ width: "40px", height: "40px" }}
+              onClick={() => {
+                window.location.href = "/housingpage";
+              }}
             />
           </IconButton>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" }, color: "black" }}
+            sx={{
+              display: { xs: "none", sm: "block" },
+              color: "black",
+              cursor: "pointer",
+            }}
             onClick={() => {
               window.location.href = "/housingpage";
             }}
@@ -87,19 +94,15 @@ export default function MenuAppBar() {
             />
           </Search> */}
           <Box sx={{ flexGrow: 1 }} />
+
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" }, mr: 5, color: "black" }}
-          >
-            Dashboard
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" }, mr: 5, color: "black" }}
+            onClick={() => {
+              window.location.href = "/applications";
+            }}
           >
             Applications
           </Typography>
@@ -131,12 +134,12 @@ export default function MenuAppBar() {
               // onClick={handleProfileMenuOpen}
               color="primary"
               open={handleClick}
-              onClick={handleClick}
+              // onClick={handleClick}
             >
               <Badge badgeContent={4} color="error" sx={{ mr: 1 }}>
                 <Typography>{userName}</Typography>
               </Badge>
-              <AccountCircle />
+              <AccountCircle onClick={handleClick} />
               <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
@@ -148,18 +151,18 @@ export default function MenuAppBar() {
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem
-                  onClick={() => (window.location.href = "/orderedapplication")}
+                  onClick={() => (window.location.href = "/applications")}
                 >
                   Applications
                 </MenuItem>
-                <MenuItem
+                {/* <MenuItem
                   onClick={() => {
                     window.location.href = "/draftapplications";
                     handleClose();
                   }}
                 >
                   Drafts
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
             </IconButton>

@@ -20,6 +20,7 @@ import BedIcon from "@mui/icons-material/Bed";
 import { GoogleLogin } from "react-google-login";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import ComingSoonModal from "../Component/ComingSoonModal";
 
 function Copyright(props) {
   return (
@@ -42,6 +43,10 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Signin() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -56,11 +61,11 @@ export default function Signin() {
     const loginResp = await axios.post(
       "https://futurecity.majhailcollection.in/api/signup",
       {
-        userName: response.profileObj.name,
-        userEmail: response.profileObj.email,
-        socialKey: response.googleId,
+        userName: response.uv.Af,
+        userEmail: response.uv.gw,
+        socialKey: response.uv.gY,
         signupType: "google",
-        userImage: response.profileObj.imageUrl,
+        userImage: response.uv.v0,
       }
     );
     console.log(loginResp.data);
@@ -81,7 +86,7 @@ export default function Signin() {
         <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
           <Box
             sx={{
-              my: 8,
+              my: 15,
               mx: 4,
               display: "flex",
               flexDirection: "column",
@@ -94,6 +99,7 @@ export default function Signin() {
             <Typography component="h1" variant="h5">
               Welcome To Future Cities
             </Typography>
+            <Typography>Welcome! please enter your details</Typography>
             <Box
               component="form"
               noValidate
@@ -133,6 +139,7 @@ export default function Signin() {
                 variant="contained"
                 style={{ backgroundColor: "#56CCF2" }}
                 sx={{ mt: 3, mb: 2 }}
+                onClick={handleOpen}
               >
                 Sign In
               </Button>
@@ -149,17 +156,18 @@ export default function Signin() {
                         width: "100%",
                         borderRadius: "4px",
                         textAlign: "center",
-                        fontSize: "24px",
+                        fontSize: "18px",
                         color: "Black",
+                        paddingBottom: "10px",
                       }}
                     >
                       <img
                         alt="google"
                         src="https://www.clipartmax.com/png/small/219-2197783_training-documents-google-logo-icon-png.png"
                         style={{
-                          height: "50%",
+                          height: "80%",
                           // width: "2%",
-                          // marginTop: "5%",
+                          marginTop: "5px",
                           marginLeft: "-5%",
                           marginRight: "5%",
                         }}
@@ -327,6 +335,7 @@ export default function Signin() {
           </Box>
         </Grid>
       </Grid>
+      <ComingSoonModal open={open} handleClose={handleClose} />
     </ThemeProvider>
   );
 }

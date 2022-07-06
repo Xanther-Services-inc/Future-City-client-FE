@@ -147,7 +147,7 @@ export default function UploadDetails({
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={3}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -179,7 +179,14 @@ export default function UploadDetails({
               {/* </Link> */}
             </label>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
+            {/* <Link href={idUrl} target="_blank"> */}
+            <Typography variant="h6" gutterBottom>
+              Choose Id File
+            </Typography>
+            {/* </Link> */}
+          </Grid>
+          <Grid item xs={12} sm={3}>
             <Link href={idUrl} target="_blank">
               <Typography variant="h6" gutterBottom>
                 {idFileName
@@ -191,7 +198,7 @@ export default function UploadDetails({
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={3}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -226,7 +233,7 @@ export default function UploadDetails({
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={3}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -258,7 +265,14 @@ export default function UploadDetails({
             </label>
           </Grid>
 
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
+            {/* <Link href={bankStatementUrl} target="_blank"> */}
+            <Typography variant="h6" gutterBottom>
+              Choose bank statement file
+            </Typography>
+            {/* </Link> */}
+          </Grid>
+          <Grid item xs={12} sm={3}>
             <Link href={bankStatementUrl} target="_blank">
               <Typography variant="h6" gutterBottom>
                 {bankStatementFileName
@@ -269,7 +283,7 @@ export default function UploadDetails({
               </Typography>
             </Link>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
             <Button
               variant="contained"
               color="primary"
@@ -299,7 +313,7 @@ export default function UploadDetails({
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={3}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -330,7 +344,14 @@ export default function UploadDetails({
               </Button>
             </label>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
+            {/* <Link href={salarySlipUrl} target="_blank"> */}
+            <Typography variant="h6" gutterBottom>
+              Choose Salary slip
+            </Typography>
+            {/* </Link> */}
+          </Grid>
+          <Grid item xs={12} sm={3}>
             <Link href={salarySlipUrl} target="_blank">
               <Typography variant="h6" gutterBottom>
                 {salarySlipFileName
@@ -341,7 +362,7 @@ export default function UploadDetails({
               </Typography>
             </Link>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
             <Button
               variant="contained"
               color="primary"
@@ -371,7 +392,7 @@ export default function UploadDetails({
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={3}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -402,7 +423,14 @@ export default function UploadDetails({
               </Button>
             </label>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
+            {/* <Link href={addressProofUrl} target="_blank"> */}
+            <Typography variant="h6" gutterBottom>
+              Choose address proof file
+            </Typography>
+            {/* </Link> */}
+          </Grid>
+          <Grid item xs={12} sm={3}>
             <Link href={addressProofUrl} target="_blank">
               <Typography variant="h6" gutterBottom>
                 {addressProofFileName
@@ -413,7 +441,7 @@ export default function UploadDetails({
               </Typography>
             </Link>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
             <Button
               variant="contained"
               color="primary"
@@ -443,7 +471,7 @@ export default function UploadDetails({
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={3}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -474,7 +502,14 @@ export default function UploadDetails({
               </Button>
             </label>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
+            {/* <Link href={paymentProofUrl} target="_blank"> */}
+            <Typography variant="h6" gutterBottom>
+              Choose payment proof file
+            </Typography>
+            {/* </Link> */}
+          </Grid>
+          <Grid item xs={12} sm={3}>
             <Link href={paymentProofUrl} target="_blank">
               <Typography variant="h6" gutterBottom>
                 {paymentProofFileName
@@ -485,7 +520,7 @@ export default function UploadDetails({
               </Typography>
             </Link>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
             <Button
               variant="contained"
               color="primary"

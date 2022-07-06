@@ -7,30 +7,59 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import axios from "axios";
+import Cookies from "universal-cookie";
+import { useParams } from "react-router-dom";
 
 const steps = [
   {
-    label: "Select campaign settings",
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    label: "Application Submitted",
+    description: `Processing time: 1-2 business days`,
   },
   {
-    label: "Create an ad group",
-    description:
-      "An ad group contains one or more ads which target a shared set of keywords.",
+    label: "Manual Verification",
+    description: `Processing time: 1-2 business days`,
   },
   {
-    label: "Create an ad",
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    label: "TPN verification",
+    description: "Processing time: 1-2 business days.",
+  },
+  {
+    label: "Request personal Information",
+    description: `Processing time: 1-2 business days`,
+  },
+  {
+    label: "Decline/ Approve",
+  },
+  {
+    label: "Assign Property manager",
+  },
+  {
+    label: "Invite Tenant",
   },
 ];
 
 export default function VerticalStepper() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(1);
+  const { applicationStatus } = useParams();
+  const cookies = new Cookies();
+  const [applications, setApplications] = React.useState([]);
+  React.useEffect(() => {
+    if (applicationStatus === "submitted") {
+      setActiveStep(0);
+    } else if (applicationStatus === "manualVerify") {
+      setActiveStep(1);
+    } else if (applicationStatus === "tpn") {
+      setActiveStep(2);
+    } else if (applicationStatus === "requestInfo") {
+      setActiveStep(3);
+    } else if (
+      applicationStatus === "decline" ||
+      applicationStatus === "approve"
+    ) {
+      setActiveStep(4);
+    }
+  }, []);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -50,11 +79,11 @@ export default function VerticalStepper() {
         {steps.map((step, index) => (
           <Step key={step.label}>
             <StepLabel
-              optional={
-                index === 2 ? (
-                  <Typography variant="caption">Last step</Typography>
-                ) : null
-              }
+            // optional={
+            //   index === 2 ? (
+            //     <Typography variant="caption">Last step</Typography>
+            //   ) : null
+            // }
             >
               {step.label}
             </StepLabel>

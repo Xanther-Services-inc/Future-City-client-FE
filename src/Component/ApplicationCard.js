@@ -65,7 +65,15 @@ export default function ApplicationCard({ housingDetails }) {
                     height: "20px",
                   }}
                 />
-                4 Beds
+                <p
+                  style={{
+                    fontSize: "10px",
+                    marginTop: "-5px",
+                    margin: "auto",
+                  }}
+                >
+                  4 Beds
+                </p>
               </Typography>
             </Grid>
             <Grid item xs={3} display="flex">
@@ -82,7 +90,15 @@ export default function ApplicationCard({ housingDetails }) {
                     height: "20px",
                   }}
                 />
-                4 Beds
+                <p
+                  style={{
+                    fontSize: "10px",
+                    marginTop: "-5px",
+                    margin: "auto",
+                  }}
+                >
+                  4 Beds
+                </p>
               </Typography>
             </Grid>
             <Grid item xs={3} display="flex">
@@ -99,7 +115,15 @@ export default function ApplicationCard({ housingDetails }) {
                     height: "20px",
                   }}
                 />
-                4 Beds
+                <p
+                  style={{
+                    fontSize: "10px",
+                    marginTop: "-5px",
+                    margin: "auto",
+                  }}
+                >
+                  4 Beds
+                </p>
               </Typography>
             </Grid>
           </Grid>

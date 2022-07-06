@@ -11,6 +11,10 @@ import PaymentConfirmation from "./Pages/PaymentConfirmation";
 import ApplicationStatus from "./Pages/ApplicationStatus";
 import OrderedApplication from "./Pages/OrderedApplication";
 import DraftApplications from "./Pages/DraftApplications";
+import SocialHousing from "./Component/SocialHousing";
+import PaymentPage from "./Pages/PaymentPage";
+import MoreHousingDetials from "./Component/ComplexDetails";
+import ComplexDetails from "./Component/ComplexDetails";
 
 function App() {
   return (
@@ -20,16 +24,22 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/housingpage" element={<HousingPage />} />
         <Route path="/housingdetails/:type" element={<Housing />} />
+        <Route path="/socialhousing/:type" element={<SocialHousing />} />
         <Route path="/tenancy/:id" element={<LinearStepper />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/paymentconfirm" element={<PaymentConfirmation />} />
-        <Route path="/status" element={<ApplicationStatus />} />
-        <Route path="/orderedapplication" element={<OrderedApplication />} />
+        <Route
+          path="/status/:applicationStatus"
+          element={<ApplicationStatus />}
+        />
+        <Route path="/applications" element={<OrderedApplication />} />
         <Route path="/draftapplications" element={<DraftApplications />} />
+        <Route path="/complex-details/:type" element={<ComplexDetails />} />
         <Route
           path="/tenancy/:id/:applicationIdParams"
           element={<LinearStepper />}
         />
+        <Route path="/payment-confirmation" element={<PaymentPage />} />
       </Routes>
     </div>
   );

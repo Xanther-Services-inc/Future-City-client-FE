@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import { WindowRounded } from "@mui/icons-material";
 
 export default function PaymentForm() {
   return (
@@ -133,6 +134,9 @@ export default function PaymentForm() {
             style={{
               width: "50%",
               justifyContent: "center",
+            }}
+            onClick={() => {
+              window.location.href = "/payment-confirmation";
             }}
           >
             Make Payment

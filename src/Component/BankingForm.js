@@ -58,7 +58,12 @@ export default function BankingForm({ setBankDetailsObj, draftApplication }) {
 
   return (
     <React.Fragment style={{ color: "#FAFAFA", justifyContent: "center" }}>
-      <Typography variant="h6" gutterBottom textAlign={"left"}>
+      <Typography
+        variant="h6"
+        gutterBottom
+        textAlign={"left"}
+        sx={{ paddingBottom: "5%", fontSize: "30px" }}
+      >
         Banking Details
       </Typography>
       <Grid container spacing={3}>

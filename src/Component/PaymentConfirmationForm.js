@@ -100,6 +100,7 @@ export default function PaymentConfirmationForm() {
           <Button
             variant="contained"
             color="primary"
+            disabled={true}
             style={{
               width: "50%",
               justifyContent: "center",

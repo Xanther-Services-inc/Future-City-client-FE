@@ -59,9 +59,9 @@ export default function EmploymentForm({
 
   return (
     <React.Fragment style={{ color: "#FAFAFA", justifyContent: "center" }}>
-      <Typography variant="h6" gutterBottom textAlign={"left"}>
+      {/* <Typography variant="h6" gutterBottom textAlign={"left"}>
         Shipping address
-      </Typography>
+      </Typography> */}
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <TextField

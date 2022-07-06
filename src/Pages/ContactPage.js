@@ -40,15 +40,23 @@ export default function ContactPage({
             borderTop: "3px solid #bbb",
           }}
         />
-        {/* <Typography variant="h4" align="center" style={{ marginTop: "20px" }}>
-					Personal details
-				</Typography> */}
+        <Typography
+          variant="h4"
+          align="left"
+          style={{
+            marginTop: "20px",
+            marginLeft: "22%",
+          }}
+        >
+          Contact Info
+        </Typography>
         <div
           style={{
-            width: "70%",
+            width: "755px",
+            height: "270px",
             margin: "auto",
-            padding: "20px",
-            marginTop: "5%",
+            padding: "auto",
+            marginTop: "2%",
             backgroundColor: "#FAFAFA",
           }}
         >

@@ -17,12 +17,11 @@ import React from "react";
 
 export default function ProductCard() {
   const cards = [
-    { img: house1, heading: "Social Housing", type: "social" },
-    { img: house2, heading: "Breaking New Ground", type: "new" },
+    { img: house1, heading: "Social Housing", type: "social-housing" },
+    { img: house2, heading: "BNG", type: "new" },
     { img: house3, heading: "Bonded Housing", type: "bonded" },
     { img: house4, heading: "Rental", type: "rent" },
     { img: house1, heading: "FLISP", type: "flisp" },
-    { img: house3, heading: "Bonded Housing", type: "bonded" },
   ];
   return (
     <div
@@ -31,6 +30,7 @@ export default function ProductCard() {
         marginTop: "5%",
         display: "flex",
         justifyContent: "center",
+        paddingBottom: "5%",
       }}
     >
       {/* End hero unit */}
@@ -83,7 +83,7 @@ export default function ProductCard() {
                   marginBottom: "20px",
                 }}
               >
-                <Link href={`/housingdetails/${card.type}`} variant="body2">
+                <Link href={`/socialhousing/${card.type}`} variant="body2">
                   <Button variant="contained" sx={{ background: "#56CCF2" }}>
                     More details
                   </Button>

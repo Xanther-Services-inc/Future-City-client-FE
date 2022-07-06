@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { useState } from "react";
+import { Button } from "@mui/material";
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
@@ -106,6 +107,15 @@ export default function OrderedApplication() {
               <TableCell>{app.name}</TableCell>
               <TableCell>{app.region}</TableCell>
               <TableCell>{app.submitStatus}</TableCell>
+              <Button
+                onClick={() => {
+                  window.location.href = `/status/${app.submitStatus}`;
+                }}
+                variant="contained"
+                sx={{ height: "20px" }}
+              >
+                View Status
+              </Button>
             </TableRow>
           ))}
         </TableBody>
