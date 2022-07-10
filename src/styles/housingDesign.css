@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.ralewayFont{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.textAlignLeft{
+text-align: left !important;
+}
+
+.complexName{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+.imagesSpacing{
+    margin:4px !important;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    background-repeat: no-repeat;
+   background-size: cover;
+}
+.imgCol2{
+    margin-right: 4px !important;
+    margin-bottom: 4px !important;
+    height:250px;
+   /* background-image: url("../Images/house1.jpg"); */
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.imgCol3{
+    margin-left: 4px !important;
+    margin-bottom: 4px !important;
+    border-top-right-radius: 20px !important;
+    height:250px;
+   /* background-image: url("../Images/house1.jpg"); */
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.imgCol4{
+    margin-right: 4px !important;
+    margin-top: 4px !important;
+    height:250px;
+   /* background-image: url("../Images/house1.jpg"); */
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.imgCol5{
+    margin-left: 4px !important;
+    margin-top: 4px !important;
+    border-bottom-right-radius: 20px !important;
+    height:250px;
+   /* background-image: url("../Images/house1.jpg"); */
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.pricingBox{
+    border: 1px solid #DDDDDD;
+    padding:20px !important;
+    border-radius: 15px;
+}
+.housingPrice{
+    font-weight: 600 !important;
+}
+.priceDetails>label{
+    font-size: 12px !important;
+}
+.priceDetails>p{
+    font-size: 16px !important;
+    font-weight: 400;
+    margin-bottom: 1px !important;
+}
+.priceDetails>hr{
+    border: 1px solid #DDDDDD;
+    margin-bottom:1px !important;
+    margin-top:1px !important;
+}
+
+.priceDistribution{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: -20px;
+}
+.pricingBtn{
+    margin:16px !important;
+}
+.totalPrice{
+    margin-bottom: 14px !important;
+}
+.mapContainer{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:540px;
+}
+.ShareSaveBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.ShareSaveBtn:hover{
+    background-color: #DDDDDD;
+}
+.carousalItem{
+    width: 280px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+}
+.shortComplexDetail{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.shortComplexDetail>p{
+    margin-top: -8px !important;
+    margin-bottom: 0px !important;
+}
+.cardSpacing{
+    margin-top: 50px !important;
+    cursor: pointer;
+}
+
+.carousalItem2{
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+}
+
+

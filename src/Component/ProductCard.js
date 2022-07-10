@@ -8,20 +8,41 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import house1 from "../Images/house1.jpg";
-import house2 from "../Images/house2.jpg";
-import house3 from "../Images/house3.jpg";
-import house4 from "../Images/house4.jpg";
+import house1 from "../Images/social.jpeg";
+import house2 from "../Images/bng.jpeg";
+import house3 from "../Images/bonded.jpeg";
+import house4 from "../Images/rental.jpeg";
+import house5 from "../Images/flisp.jpeg";
 
 import React from "react";
 
 export default function ProductCard() {
   const cards = [
-    { img: house1, heading: "Social Housing", type: "social-housing" },
-    { img: house2, heading: "BNG", type: "new" },
-    { img: house3, heading: "Bonded Housing", type: "bonded" },
-    { img: house4, heading: "Rental", type: "rent" },
-    { img: house1, heading: "FLISP", type: "flisp" },
+    {
+      img: house1,
+      heading: "Social Housing",
+      type: "social-housing",
+      incomeRange: "R1,850 - R22,000",
+    },
+    { img: house2, heading: "BNG", type: "new", incomeRange: "R0 - R3,500" },
+    {
+      img: house3,
+      heading: "Bonded Housing",
+      type: "bonded",
+      incomeRange: "R1,850 - R22,000",
+    },
+    {
+      img: house4,
+      heading: "Rental",
+      type: "rent",
+      incomeRange: "R10,000 - R30,000",
+    },
+    {
+      img: house5,
+      heading: "FLISP",
+      type: "flisp",
+      incomeRange: "R3,500 - R22,500",
+    },
   ];
   return (
     <div
@@ -34,7 +55,7 @@ export default function ProductCard() {
       }}
     >
       {/* End hero unit */}
-      <Grid container spacing={10} style={{ display: "flex" }}>
+      <Grid container spacing={2} style={{ display: "flex" }}>
         {cards.map((card) => (
           <Grid
             item
@@ -43,14 +64,19 @@ export default function ProductCard() {
             sm={6}
             md={4}
             lg={4}
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "20px",
+            }}
           >
             <Card
               sx={{
-                height: "483px",
+                // height: "483px",
                 display: "flex",
                 width: "395px",
                 flexDirection: "column",
+                borderRadius: "12px",
               }}
               elevation={10}
             >
@@ -73,6 +99,9 @@ export default function ProductCard() {
                   This is a media card. You can use this section to describe the
                   content.
                 </Typography>
+                <hr />
+                <strong>Income Range {card.incomeRange}</strong>
+                <hr />
               </CardContent>
               <CardActions
                 sx={{
@@ -83,7 +112,11 @@ export default function ProductCard() {
                   marginBottom: "20px",
                 }}
               >
-                <Link href={`/socialhousing/${card.type}`} variant="body2">
+                <Link
+                  href={`/housingdetailsdesign/${card.type}`}
+                  variant="body2"
+                  style={{ textDecoration: "none" }}
+                >
                   <Button variant="contained" sx={{ background: "#56CCF2" }}>
                     More details
                   </Button>

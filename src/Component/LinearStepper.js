@@ -92,7 +92,6 @@ export default function LinearStepper({ children }) {
       }
     );
     setApplicationId(application.data.data.applicationId);
-    console.log({ application });
   };
   const handleSubmit = async () => {
     const submit = await axios.post(
@@ -111,12 +110,8 @@ export default function LinearStepper({ children }) {
         },
       }
     );
-    console.log("submit", submit);
     window.location.href = "/payment";
   };
-  console.log(uploadDocumentsObj);
-  console.log(applicationStatus);
-
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };

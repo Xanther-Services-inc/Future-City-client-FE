@@ -24,6 +24,7 @@ export default function EmploymentForm({
     expense: "",
   });
   const handleChange = (event) => {
+    console.log(event, "event>>>>>>>>>>>>>>>>>>");
     setState({
       ...state,
       [event.target.name]: event.target.value,

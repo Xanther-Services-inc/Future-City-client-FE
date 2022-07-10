@@ -13,8 +13,10 @@ import OrderedApplication from "./Pages/OrderedApplication";
 import DraftApplications from "./Pages/DraftApplications";
 import SocialHousing from "./Component/SocialHousing";
 import PaymentPage from "./Pages/PaymentPage";
-import MoreHousingDetials from "./Component/ComplexDetails";
 import ComplexDetails from "./Component/ComplexDetails";
+import { HousingDesign } from "./Pages/HousingDesign";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { HouseDetailsDesign } from "./Pages/HouseDetailsDesign";
 
 function App() {
   return (
@@ -40,6 +42,13 @@ function App() {
           element={<LinearStepper />}
         />
         <Route path="/payment-confirmation" element={<PaymentPage />} />
+
+        {/* BELOW CHANGES ADDED BY RAVI PATHAK */}
+        <Route path="/housingdesign/:type" element={<HousingDesign />} />
+        <Route
+          path="/housingdetailsdesign/:type"
+          element={<HouseDetailsDesign />}
+        />
       </Routes>
     </div>
   );
