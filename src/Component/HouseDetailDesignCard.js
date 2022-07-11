@@ -55,7 +55,7 @@ export const HouseDetailsDesignCard = (housingData) => {
               {housingData?.housingData?.complexType === "Social-Housing" ? (
                 <>
                   <strong>R1,850 - R22,000</strong>{" "}
-                  <Button
+                  {/* <Button
                     sx={{
                       backgroundColor: "#ffc107",
                       borderColor: "#ffc107",
@@ -67,16 +67,16 @@ export const HouseDetailsDesignCard = (housingData) => {
                       marginTop: "5px",
                       marginBottom: "5px",
                     }}
+                  > */}
+                  <a
+                    className="btn btn-primary"
+                    href={"/housing/" + housingData?.housingData?.complexId}
+                    style={{ color: "white", textDecoration: "none" }}
                   >
-                    <a
-                      href={
-                        "/housingdesign/" + housingData?.housingData?.complexId
-                      }
-                      style={{ color: "white", textDecoration: "none" }}
-                    >
-                      Apply{" "}
-                    </a>
-                  </Button>
+                    Apply{" "}
+                  </a>
+                  <br />
+                  {/* </Button> */}
                 </>
               ) : (
                 ""

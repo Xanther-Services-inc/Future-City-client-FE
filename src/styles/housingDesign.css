@@ -136,5 +136,67 @@ text-align: left !important;
     background-position: center center;
     border-radius: 10px;
 }
-
+.formData>.row{
+    margin:14px !important;
+}
+#inputTag{
+    display: none;
+  }
+  #inputTag1{
+    display: none;
+  }
+  #inputTag2{
+    display: none;
+  }
+  #inputTag3{
+    display: none;
+  }
+  #inputTag4{
+    display: none;
+  }
+.fileUpload{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.selectedFilename{
+    margin-left: 10px;
+}
+.nextBackButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+.steps{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.stepsBullets{
+    padding:8px 16px;
+    border-radius: 100%;
+    background-color: rgb(100, 100, 100);
+    color:#fff
+}
+.stepsBulletsDone{
+    padding:8px 16px;
+    border-radius: 100%;
+    color: #fff;
+    background-color:rgb(37, 126, 250)
+}
+.ApplicationDataContainer{
+    padding:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px !important;
+}
+.HOusingContent{
+    text-align: left !important;
+    margin-left: 20px !important;
+}
 

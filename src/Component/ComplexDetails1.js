@@ -202,7 +202,7 @@ export const ComplexDetails1 = () => {
                     </button> */}
                     <a
                       className="btn btn-primary"
-                      href={"/tenancy/" + housing?.complexId}
+                      href={"/application-form/" + housing?.complexId}
                     >
                       Apply
                     </a>

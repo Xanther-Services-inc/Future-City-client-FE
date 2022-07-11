@@ -18,6 +18,7 @@ import { HousingDesign } from "./Pages/HousingDesign";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HouseDetailsDesign } from "./Pages/HouseDetailsDesign";
 import ApplicationTable from "./Pages/ApplicationTable";
+import { StepsForm } from "./Pages/StepsForm";
 
 function App() {
   return (
@@ -45,11 +46,9 @@ function App() {
         <Route path="/payment-confirmation" element={<PaymentPage />} />
 
         {/* BELOW CHANGES ADDED BY RAVI PATHAK */}
-        <Route path="/housingdesign/:type" element={<HousingDesign />} />
-        <Route
-          path="/housingdetailsdesign/:type"
-          element={<HouseDetailsDesign />}
-        />
+        <Route path="/housing/:type" element={<HousingDesign />} />
+        <Route path="/housinglist/:type" element={<HouseDetailsDesign />} />
+        <Route path="/application-form/:type" element={<StepsForm />}></Route>
       </Routes>
     </div>
   );

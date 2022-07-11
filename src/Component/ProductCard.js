@@ -126,7 +126,7 @@ export default function ProductCard() {
                 }}
               >
                 <Link
-                  href={`/housingdetailsdesign/${card.type}`}
+                  href={`/housinglist/${card.type}`}
                   variant="body2"
                   style={{ textDecoration: "none" }}
                 >

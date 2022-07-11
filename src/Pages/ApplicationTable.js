@@ -79,7 +79,7 @@ export default function ApplicationTable() {
   useEffect(() => {
     (async () => {
       const applicationData = await axios.get(
-        `https://futurecity.majhailcollection.in/api/getUserApplicationsByStatus?status=submitted`,
+        `https://futurecity.majhailcollection.in/api/getUserApplicationsByStatus`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export default function ApplicationTable() {
           },
         }
       );
-      console.log({ applicationData });
+      console.log(applicationData, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
       setApplications(applicationData.data.data);
     })();
   }, []);

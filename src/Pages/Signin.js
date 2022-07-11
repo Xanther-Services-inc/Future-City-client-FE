@@ -83,7 +83,16 @@ export default function Signin() {
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
-        <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
+        <Grid
+          item
+          xs={12}
+          sm={8}
+          md={6}
+          component={Paper}
+          elevation={6}
+          square
+          style={{ background: "#01022E", color: "#ffffff" }}
+        >
           <Box
             sx={{
               my: 15,
@@ -96,6 +105,7 @@ export default function Signin() {
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
 							<LockOutlinedIcon />
 						</Avatar> */}
+            <img src="../new-logo.png" />
             <Typography component="h1" variant="h5">
               Welcome To Future Cities
             </Typography>
