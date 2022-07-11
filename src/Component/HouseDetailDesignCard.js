@@ -2,6 +2,7 @@
  * CREATED AND EDITED BY RAVI PATHAK
  */
 
+import { Button, Card } from "@mui/material";
 import Carousel from "react-bootstrap/Carousel";
 
 import background from "../Images/house1.jpg";
@@ -13,18 +14,24 @@ import background4 from "../Images/house4.jpg";
 export const HouseDetailsDesignCard = (housingData) => {
   console.log(housingData, "housing >>>>>>>>>>>>>>>>>>>>>");
   return (
-    <div className="col-3 cardSpacing">
-      <Carousel fade>
-        {housingData?.housingData.complexImages.map((value, index) => (
-          <Carousel.Item interval={10000} key={index}>
-            <div
-              className="carousalItem"
-              style={{ backgroundImage: `url(${value})` }}
-            ></div>
-          </Carousel.Item>
-        ))}
+    <Card className="col-3 cardSpacing">
+      <div
+        style={{
+          marginTop: "5%",
+          marginLeft: "2.5%",
+        }}
+      >
+        <Carousel fade>
+          {housingData?.housingData.complexImages.map((value, index) => (
+            <Carousel.Item interval={10000} key={index}>
+              <div
+                className="carousalItem"
+                style={{ backgroundImage: `url(${value})` }}
+              ></div>
+            </Carousel.Item>
+          ))}
 
-        {/* <Carousel.Item interval={10000}>
+          {/* <Carousel.Item interval={10000}>
           <div
             className="carousalItem"
             style={{ backgroundImage: `url(${background2})` }}
@@ -36,11 +43,8 @@ export const HouseDetailsDesignCard = (housingData) => {
             style={{ backgroundImage: `url(${background})` }}
           ></div>
         </Carousel.Item> */}
-      </Carousel>
-      <a
-        href={"/housingdesign/" + housingData?.housingData?.complexId}
-        style={{ textDecoration: "none", color: "black" }}
-      >
+        </Carousel>
+
         <div className="row">
           <div className="col">
             <div className="shortComplexDetail">
@@ -49,14 +53,38 @@ export const HouseDetailsDesignCard = (housingData) => {
                 {housingData?.housingData?.region}
               </p>
               {housingData?.housingData?.complexType === "Social-Housing" ? (
-                <strong>R1,850 - R22,000</strong>
+                <>
+                  <strong>R1,850 - R22,000</strong>{" "}
+                  <Button
+                    sx={{
+                      backgroundColor: "#ffc107",
+                      borderColor: "#ffc107",
+                      // color: "white",
+                      fontWeight: "bold",
+                      fontSize: "14px",
+                      borderRadius: "5px",
+                      padding: "5px",
+                      marginTop: "5px",
+                      marginBottom: "5px",
+                    }}
+                  >
+                    <a
+                      href={
+                        "/housingdesign/" + housingData?.housingData?.complexId
+                      }
+                      style={{ color: "white", textDecoration: "none" }}
+                    >
+                      Apply{" "}
+                    </a>
+                  </Button>
+                </>
               ) : (
                 ""
               )}
             </div>
           </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </Card>
   );
 };

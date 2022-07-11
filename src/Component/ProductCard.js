@@ -19,26 +19,31 @@ import React from "react";
 export default function ProductCard() {
   const cards = [
     {
-      img: house1,
+      img: "https://futurecitybucket.s3.amazonaws.com/social.jpeg",
       heading: "Social Housing",
       type: "social-housing",
       incomeRange: "R1,850 - R22,000",
     },
-    { img: house2, heading: "BNG", type: "new", incomeRange: "R0 - R3,500" },
     {
-      img: house3,
+      img: "https://futurecitybucket.s3.amazonaws.com/bng.jpeg",
+      heading: "BNG",
+      type: "new",
+      incomeRange: "R0 - R3,500",
+    },
+    {
+      img: "https://futurecitybucket.s3.amazonaws.com/bonded.jpeg",
       heading: "Bonded Housing",
       type: "bonded",
       incomeRange: "R1,850 - R22,000",
     },
     {
-      img: house4,
+      img: "https://futurecitybucket.s3.amazonaws.com/rental.jpeg",
       heading: "Rental",
       type: "rent",
       incomeRange: "R10,000 - R30,000",
     },
     {
-      img: house5,
+      img: "https://futurecitybucket.s3.amazonaws.com/flisp.jpeg",
       heading: "FLISP",
       type: "flisp",
       incomeRange: "R3,500 - R22,500",
@@ -89,6 +94,7 @@ export default function ProductCard() {
                   marginTop: "10px",
                 }}
                 image={card.img}
+                // src={card.img}
                 alt="random"
               />
               <CardContent sx={{ flexGrow: 1 }}>
@@ -100,7 +106,14 @@ export default function ProductCard() {
                   content.
                 </Typography>
                 <hr />
-                <strong>Income Range {card.incomeRange}</strong>
+                <Grid container spacing={2}>
+                  <Grid sm={6}>
+                    <p style={{ color: "red", fontWeight: "bold" }}>
+                      Income Range{" "}
+                    </p>
+                  </Grid>
+                  <Grid sm={6}>{card.incomeRange}</Grid>
+                </Grid>
                 <hr />
               </CardContent>
               <CardActions
@@ -118,7 +131,7 @@ export default function ProductCard() {
                   style={{ textDecoration: "none" }}
                 >
                   <Button variant="contained" sx={{ background: "#56CCF2" }}>
-                    More details
+                    Apply Now
                   </Button>
                 </Link>
               </CardActions>

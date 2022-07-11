@@ -17,6 +17,7 @@ import ComplexDetails from "./Component/ComplexDetails";
 import { HousingDesign } from "./Pages/HousingDesign";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HouseDetailsDesign } from "./Pages/HouseDetailsDesign";
+import ApplicationTable from "./Pages/ApplicationTable";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
           path="/status/:applicationStatus"
           element={<ApplicationStatus />}
         />
-        <Route path="/applications" element={<OrderedApplication />} />
+        <Route path="/applications" element={<ApplicationTable />} />
         <Route path="/draftapplications" element={<DraftApplications />} />
         <Route path="/complex-details/:type" element={<ComplexDetails />} />
         <Route

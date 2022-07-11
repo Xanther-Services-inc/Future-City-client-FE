@@ -204,7 +204,7 @@ export const ComplexDetails1 = () => {
                       className="btn btn-primary"
                       href={"/tenancy/" + housing?.complexId}
                     >
-                      Reserve
+                      Apply
                     </a>
                   </div>
                   <div className="row" style={{ margin: "10px" }}>

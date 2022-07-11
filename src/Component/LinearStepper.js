@@ -16,12 +16,14 @@ import { useEffect } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import ApplicationCard from "./ApplicationCard";
+import CoApplicantPage from "../Pages/CoApplicantPage";
 
 const steps = [
   "Personal Info",
   "Contact Info",
   "Employment Info",
   "Emergency Contact Info",
+  "co-applicant Info",
   "Supporting Documents",
 ];
 
@@ -36,6 +38,7 @@ export default function LinearStepper({ children }) {
   const [employmentDetailsObj, setEmploymentDetailsObj] = React.useState({});
   const [emergencyContactDetailsObj, setEmergencyContactDetailsObj] =
     React.useState({});
+  const [coApplicantInfoObj, setCoApplicantInfoObj] = React.useState({});
   const [uploadDocumentsObj, setUploadDocumentsObj] = React.useState({});
   const [applicationId, setApplicationId] = React.useState("");
   // const [draftApplication, setDraftApplication] = React.useState([]);
@@ -78,6 +81,7 @@ export default function LinearStepper({ children }) {
         employmentInfo: employmentDetailsObj,
         emergencyContactInfo: emergencyContactDetailsObj,
         documents: uploadDocumentsObj,
+        coApplicantInfo: coApplicantInfoObj,
         complexId: id,
       },
       {
@@ -171,6 +175,10 @@ export default function LinearStepper({ children }) {
           />
         );
       case 4:
+        return (
+          <CoApplicantPage setCoApplicantInfoObj={setCoApplicantInfoObj} />
+        );
+      case 5:
         return (
           <UploadDetailsPage
             setApplicationStatus={setApplicationStatus}
