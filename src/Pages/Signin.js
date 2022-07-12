@@ -200,12 +200,24 @@ export default function Signin() {
               />
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link
+                    href="#"
+                    variant="body2"
+                    sx={{
+                      color: "#ffffff",
+                    }}
+                  >
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
+                  <Link
+                    href="/signup"
+                    variant="body2"
+                    sx={{
+                      color: "#ffffff",
+                    }}
+                  >
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
@@ -251,59 +263,15 @@ export default function Signin() {
                   component="div"
                   style={{ textAlign: "left" }}
                 >
-                  Some Title
+                  Welcome to Future Cities
                 </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   style={{ textAlign: "left" }}
                 >
-                  Some small details goes here
+                  Experience the future of cities
                 </Typography>
-                <Grid container spacing={2}>
-                  <Grid
-                    item
-                    xs={3}
-                    style={{ fontSize: "14px", textAlign: "right" }}
-                  >
-                    <BedIcon
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        marginTop: "15px",
-                      }}
-                    />
-                    <span>4 Beds</span>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={3}
-                    style={{ fontSize: "14px", textAlign: "right" }}
-                  >
-                    <BedIcon
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        marginTop: "16px",
-                      }}
-                    />
-                    4 beds
-                  </Grid>
-                  <Grid
-                    item
-                    xs={3}
-                    style={{ fontSize: "14px", textAlign: "right" }}
-                  >
-                    <BedIcon
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        marginTop: "15px",
-                      }}
-                    />
-                    4 beds
-                  </Grid>
-                </Grid>
               </CardContent>
               <CardActions
                 style={{
@@ -320,15 +288,11 @@ export default function Signin() {
                       "linear-gradient(180deg, #0DA8FF -10.45%, rgba(4, 164, 254, 0) 89.55%)",
                   }}
                 >
-                  <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                      <Typography
-                        style={{ marginTop: "15%", fontSize: "20px" }}
-                      >
-                        R 2300/month
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={6}>
+                  <Grid
+                    container
+                    sx={{ display: "flex", justifyContent: "center" }}
+                  >
+                    <Grid item xs={12} sx={{ justifyContent: "center" }}>
                       <CardActions>
                         <Button
                           variant="contained"

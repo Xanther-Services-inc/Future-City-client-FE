@@ -71,7 +71,11 @@ export const HouseDetailsDesignCard = (housingData) => {
                   <a
                     className="btn btn-primary"
                     href={"/housing/" + housingData?.housingData?.complexId}
-                    style={{ color: "white", textDecoration: "none" }}
+                    style={{
+                      color: "white",
+                      textDecoration: "none",
+                      background: "#00022e",
+                    }}
                   >
                     Apply{" "}
                   </a>

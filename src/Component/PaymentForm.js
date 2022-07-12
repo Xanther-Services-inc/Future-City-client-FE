@@ -22,9 +22,10 @@ export default function PaymentForm() {
           </Typography>
           <TextField
             required
-            id="email"
-            name="email"
-            label="Email Address"
+            id="amount"
+            name="amount"
+            value={"R 200"}
+            shrink="true"
             fullWidth
             autoComplete="shipping address-line1"
             variant="outlined"
@@ -134,6 +135,7 @@ export default function PaymentForm() {
             style={{
               width: "50%",
               justifyContent: "center",
+              background: "#00022e",
             }}
             onClick={() => {
               window.location.href = "/payment-confirmation";

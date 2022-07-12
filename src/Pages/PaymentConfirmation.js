@@ -40,14 +40,6 @@ export default function PaymentConfirmation() {
           >
             Payment Confirmation
           </Typography>
-          <Typography>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et
-              nisl hendrerit, aliquet mi sed, scelerisque tortor. Aliquam eu
-              scelerisque quam, ac tristique dolor. Aliquam nulla risus,
-              fermentum
-            </p>
-          </Typography>
         </div>
         <hr
           style={{

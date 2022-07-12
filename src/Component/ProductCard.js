@@ -101,15 +101,12 @@ export default function ProductCard() {
                 <Typography gutterBottom variant="h5" component="h2">
                   {card.heading}
                 </Typography>
-                <Typography>
-                  This is a media card. You can use this section to describe the
-                  content.
-                </Typography>
+
                 <hr />
                 <Grid container spacing={2}>
                   <Grid sm={6}>
                     <p style={{ color: "red", fontWeight: "bold" }}>
-                      Income Range{" "}
+                      Income Range / month
                     </p>
                   </Grid>
                   <Grid sm={6}>{card.incomeRange}</Grid>
@@ -130,7 +127,7 @@ export default function ProductCard() {
                   variant="body2"
                   style={{ textDecoration: "none" }}
                 >
-                  <Button variant="contained" sx={{ background: "#56CCF2" }}>
+                  <Button variant="contained" sx={{ background: "#00022e" }}>
                     Apply Now
                   </Button>
                 </Link>

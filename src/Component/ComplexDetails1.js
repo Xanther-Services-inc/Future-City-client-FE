@@ -189,10 +189,10 @@ export const ComplexDetails1 = () => {
                   </div>
                   <div className="row" style={{ margin: "10px" }}>
                     <div className="col priceDetails textAlignLeft">
-                      <label>CARETAKER NAME</label>
+                      <label>AGENT NAME</label>
                       <p>{housing?.careTaker}</p>
                       <hr className="hrs" />
-                      <label>CARETAKER CONTACT</label>
+                      <label>AGENT CONTACT</label>
                       <p>{housing?.careTakerContact}</p>
                     </div>
                   </div>
@@ -203,6 +203,7 @@ export const ComplexDetails1 = () => {
                     <a
                       className="btn btn-primary"
                       href={"/application-form/" + housing?.complexId}
+                      style={{ color: "white", background: "#00022e" }}
                     >
                       Apply
                     </a>
@@ -235,23 +236,16 @@ export const ComplexDetails1 = () => {
             </div>
             {/* Housing Details Section Ends Here */}
             {/* map section comes here */}
-            <div style={{ margin: "24px" }}>
-              <div className="row">
-                <div className="col">
-                  <hr style={{ border: "1px solid #DDDDDD" }} />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col textAlignLeft">
-                  <h4>Where you'll be</h4>
-                </div>
-              </div>
-              <div className="row">
-                <div
-                  className="col mapContainer"
-                  style={{ backgroundImage: `url(${map})` }}
-                ></div>
-              </div>
+            <div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.8347616812483!2d27.729733829219885!3d-26.150777795140574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf06520d35b3de6e7!2zMjbCsDA5JzAyLjgiUyAyN8KwNDMnNDkuMCJF!5e1!3m2!1sen!2sin!4v1657513232455!5m2!1sen!2sin"
+                width="600"
+                height="450"
+                style={{ border: "0", width: "100%" }}
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
             {/* map section ends here */}
           </div>

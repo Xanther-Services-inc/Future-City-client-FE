@@ -54,10 +54,14 @@ export default function VerticalStepper() {
     } else if (applicationStatus === "requestInfo") {
       setActiveStep(3);
     } else if (
-      applicationStatus === "decline" ||
-      applicationStatus === "approve"
+      applicationStatus === "rejected" ||
+      applicationStatus === "accepted"
     ) {
       setActiveStep(4);
+    } else if (applicationStatus === "assign-agent") {
+      setActiveStep(5);
+    } else if (applicationStatus === "invite-tenant") {
+      setActiveStep(6);
     }
   }, []);
 

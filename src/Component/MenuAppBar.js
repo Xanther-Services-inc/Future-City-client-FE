@@ -60,7 +60,7 @@ export default function MenuAppBar() {
             sx={{ mr: 2 }}
           >
             <img
-              src={require("../logo2.png")}
+              src={require("../logo3.png")}
               alt="logo"
               style={{ width: "40px", height: "40px" }}
               onClick={() => {
@@ -121,7 +121,7 @@ export default function MenuAppBar() {
               aria-label="show 17 new notifications"
               color="primary"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={0} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -136,7 +136,7 @@ export default function MenuAppBar() {
               open={handleClick}
               // onClick={handleClick}
             >
-              <Badge badgeContent={4} color="error" sx={{ mr: 1 }}>
+              <Badge badgeContent={0} color="error" sx={{ mr: 1 }}>
                 <Typography>{userName}</Typography>
               </Badge>
               <AccountCircle onClick={handleClick} />

@@ -5,6 +5,7 @@ import Cookies from "universal-cookie";
 import UploaderProgress from "../Component/UploaderProgress";
 import { useNavigate } from "react-router-dom";
 import MenuAppBar from "../Component/MenuAppBar";
+import swal from "sweetalert";
 
 export const StepsForm = () => {
   const [formStep, setFormStep] = useState(1);
@@ -271,7 +272,7 @@ export const StepsForm = () => {
       .then((res) => {
         console.log(res, "res data after file uploaded and data uploaded");
         if (res?.data?.status === 200) {
-          navigate("/applications");
+          navigate("/payment");
         }
         console.log(res, "submitted the application form");
       });
@@ -293,28 +294,28 @@ export const StepsForm = () => {
             <div className="col">
               <div className="steps">
                 <div className="stepsBulletsDone">1</div> &nbsp; Personal Info.
-                <p>____________________________</p>
+                <p>_______________</p>
                 <div
                   className={formStep > 1 ? "stepsBulletsDone" : "stepsBullets"}
                 >
                   2
                 </div>{" "}
                 &nbsp; Contact Info.
-                <p>____________________________</p>
+                <p>________________</p>
                 <div
                   className={formStep > 2 ? "stepsBulletsDone" : "stepsBullets"}
                 >
                   3
                 </div>{" "}
                 &nbsp; Employement Info.
-                <p>____________________________</p>
+                <p>________________</p>
                 <div
                   className={formStep > 3 ? "stepsBulletsDone" : "stepsBullets"}
                 >
                   4
                 </div>{" "}
                 &nbsp; Employement Contact Info.
-                <p>____________________________</p>
+                <p>________________</p>
                 <div
                   className={formStep > 4 ? "stepsBulletsDone" : "stepsBullets"}
                 >
@@ -803,7 +804,7 @@ export const StepsForm = () => {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Total Expances"
+                      placeholder="Total Expenses"
                       onChange={(e) => {
                         setTotalExpances(e.target.value);
                       }}
@@ -816,7 +817,24 @@ export const StepsForm = () => {
                   Back
                 </button>
                 &nbsp;&nbsp;
-                <button className="btn btn-primary" onClick={handleNext}>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    console.log({ totalIncome });
+                    if (
+                      Number(totalIncome) > 22000 ||
+                      Number(totalIncome) < 1850
+                    ) {
+                      swal(
+                        "Opps!",
+                        "Total Income should be within R 1850 to R 22000",
+                        "error"
+                      );
+                    } else {
+                      handleNext();
+                    }
+                  }}
+                >
                   Next
                 </button>
               </div>
