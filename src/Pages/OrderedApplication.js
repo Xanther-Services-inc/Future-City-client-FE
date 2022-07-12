@@ -113,6 +113,7 @@ export default function OrderedApplication() {
                 }}
                 variant="contained"
                 sx={{ height: "20px" }}
+                style={{ background: "#00022e", color: "#00022e" }}
               >
                 View Status
               </Button>
