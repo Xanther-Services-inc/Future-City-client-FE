@@ -180,11 +180,11 @@ export const ComplexDetails1 = () => {
                 <div className="container pricingBox shadow">
                   <div className="row">
                     <div className="col textAlignLeft">
-                      <h3 className="housingPrice">
-                        R{" "}
-                        {parseFloat(housing?.additionalCharges) +
-                          parseFloat(housing?.applicationFee)}
-                      </h3>
+                      {/* <h6 className="housingPrice"> */}
+                      <span>Application Processing Fee {" "} &nbsp;&nbsp;</span>
+                        <span style={{fontSize:"30px"}}>R{parseFloat(housing?.additionalCharges) +
+                          parseFloat(housing?.applicationFee)}</span>
+                      {/* </h6> */}
                     </div>
                   </div>
                   <div className="row" style={{ margin: "10px" }}>
@@ -201,9 +201,8 @@ export const ComplexDetails1 = () => {
                       Reserve
                     </button> */}
                     <a
-                      className="btn btn-primary"
+                      className="btn btn-primary DarkButtonBackground"
                       href={"/application-form/" + housing?.complexId}
-                      style={{ color: "white", background: "#00022e" }}
                     >
                       Apply
                     </a>

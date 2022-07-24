@@ -50,7 +50,7 @@ export default function HousingDetails() {
   }, [type]);
   console.log(housing);
   return (
-    <div style={{ marginTop: "50px" }}>
+    <div className="Darkbackground" style={{ marginTop: "50px" }}>
       <Grid container>
         {/* <Grid item xs={12} md={4} sx={{ margin: "auto" }}> */}
         <Typography

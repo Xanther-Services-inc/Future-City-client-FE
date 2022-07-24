@@ -50,7 +50,7 @@ export default function MenuAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ background: "white" }}>
+      <AppBar position="static" sx={{ background: "#01022e", color:"#ffffff" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -74,7 +74,7 @@ export default function MenuAppBar() {
             component="div"
             sx={{
               display: { xs: "none", sm: "block" },
-              color: "black",
+              color: "#ffffff",
               cursor: "pointer",
             }}
             onClick={() => {
@@ -99,7 +99,7 @@ export default function MenuAppBar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" }, mr: 5, color: "black" }}
+            sx={{ display: { xs: "none", sm: "block" }, mr: 5, color: "#ffffff" }}
             onClick={() => {
               window.location.href = "/applications";
             }}

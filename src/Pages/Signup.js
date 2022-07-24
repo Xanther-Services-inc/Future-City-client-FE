@@ -10,9 +10,10 @@ import {
 } from "@mui/material";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import GoogleLogin from "react-google-login";
 // import FormControlLabel from "@mui/material/FormControlLabel";
 // import Checkbox from "@mui/material/Checkbox";
-import { GoogleLogin } from "react-google-login";
+// import { GoogleLogin } from "react-google-login";
 
 const responseGoogle = (response) => {
 	console.log(response);
@@ -33,7 +34,6 @@ const card = (
 					fontFamily: "Roboto",
 					fontSize: "38px",
 					fontWeight: "700",
-					color: "white",
 					marginTop: "78px",
 					marginBottom: "78px",
 				}}

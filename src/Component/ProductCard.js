@@ -19,31 +19,36 @@ import React from "react";
 export default function ProductCard() {
   const cards = [
     {
-      img: "https://futurecitybucket.s3.amazonaws.com/social.jpeg",
+      // img: "https://futurecitybucket.s3.amazonaws.com/social.jpeg",
+      img:house1,
       heading: "Social Housing",
       type: "social-housing",
       incomeRange: "R1,850 - R22,000",
     },
     {
-      img: "https://futurecitybucket.s3.amazonaws.com/bng.jpeg",
+      // img: "https://futurecitybucket.s3.amazonaws.com/bng.jpeg",
+      img:house2,
       heading: "BNG",
       type: "new",
       incomeRange: "R0 - R3,500",
     },
     {
-      img: "https://futurecitybucket.s3.amazonaws.com/bonded.jpeg",
+      // img: "https://futurecitybucket.s3.amazonaws.com/bonded.jpeg",
+      img:house3,
       heading: "Bonded Housing",
       type: "bonded",
       incomeRange: "R1,850 - R22,000",
     },
     {
-      img: "https://futurecitybucket.s3.amazonaws.com/rental.jpeg",
+      // img: "https://futurecitybucket.s3.amazonaws.com/rental.jpeg",
+      img:house4,
       heading: "Rental",
       type: "rent",
       incomeRange: "R10,000 - R30,000",
     },
     {
-      img: "https://futurecitybucket.s3.amazonaws.com/flisp.jpeg",
+      // img: "https://futurecitybucket.s3.amazonaws.com/flisp.jpeg",
+      img:house5,
       heading: "FLISP",
       type: "flisp",
       incomeRange: "R3,500 - R22,500",
@@ -58,9 +63,10 @@ export default function ProductCard() {
         justifyContent: "center",
         paddingBottom: "5%",
       }}
+      
     >
       {/* End hero unit */}
-      <Grid container spacing={2} style={{ display: "flex" }}>
+      <Grid container spacing={2} style={{ display: "flex" }} >
         {cards.map((card) => (
           <Grid
             item
@@ -84,6 +90,7 @@ export default function ProductCard() {
                 borderRadius: "12px",
               }}
               elevation={10}
+              className="DarkCard"
             >
               <CardMedia
                 component="img"
@@ -96,20 +103,21 @@ export default function ProductCard() {
                 image={card.img}
                 // src={card.img}
                 alt="random"
+                className="DarkCard"
               />
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography className="DarkFontsColor" gutterBottom variant="h5" component="h2">
                   {card.heading}
                 </Typography>
 
                 <hr />
-                <Grid container spacing={2}>
-                  <Grid sm={6}>
-                    <p style={{ color: "red", fontWeight: "bold" }}>
+                <Grid container spacing={0} className="incomeRange">
+                  <Grid sm={6} className="DarkFontsColor">
+                    <p style={{fontWeight: "bold" }}>
                       Income Range / month
                     </p>
                   </Grid>
-                  <Grid sm={6}>{card.incomeRange}</Grid>
+                  <Grid className="DarkFontsColor" sm={6}>{card.incomeRange}</Grid>
                 </Grid>
                 <hr />
               </CardContent>
@@ -127,7 +135,7 @@ export default function ProductCard() {
                   variant="body2"
                   style={{ textDecoration: "none" }}
                 >
-                  <Button variant="contained" sx={{ background: "#00022e" }}>
+                  <Button className="DarkButtonBackground" variant="contained" sx={{ background: "#00022e",width: "300px",marginTop:"-30px" }}>
                     Apply Now
                   </Button>
                 </Link>

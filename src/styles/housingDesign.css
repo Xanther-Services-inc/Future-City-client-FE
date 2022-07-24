@@ -200,3 +200,49 @@ text-align: left !important;
     margin-left: 20px !important;
 }
 
+.incomeRange{
+    margin-top: -10px !important;
+    margin-bottom: -10px !important;
+    padding-top: 10px !important;
+    padding-left: 10px !important;
+    background-color: cadetblue !important;
+    border-radius: 3px !important;
+}
+
+.MuiOutlinedInput-input{
+    color: #ffffff !important;
+}
+.MuiFormLabel-colorPrimary{
+    color: #ffffff !important;
+}
+.MuiOutlinedInput-notchedOutline{
+    border-color: #ffffff !important;
+}
+.Darkbackground{
+    /* background-color: #373a43 !important; */
+    background-color: #171918 !important;
+}
+.DarkFontsColor{
+    color: #efefef !important;
+}
+.DarkCard{
+    background-color: #2f3942 !important;
+}
+.DarkButtonBackground{
+    background-color: #f7c914 !important;
+    color: #2f3942 !important;
+    border: 1px #f7c914 !important;
+}
+.DarkPricingContainer{
+    background-color: cadetblue !important;
+    border-radius: 3px !important;
+    text-align: center !important;
+    margin: 5px !important;
+}
+.App{
+    min-height: 100vh !important;
+}
+#root{
+    min-height: 100vh !important;
+    background-color: #171918 !important;
+}

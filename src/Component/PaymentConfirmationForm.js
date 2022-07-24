@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import Pdf from "react-to-pdf";
+// import Pdf from "react-to-pdf";
 
 export default function PaymentConfirmationForm() {
   const ref = React.createRef();
@@ -103,7 +103,7 @@ export default function PaymentConfirmationForm() {
 
         <Grid item xs={12} mt={5} pb={5}></Grid>
       </Grid>
-      <Pdf targetRef={ref} filename="code-example.pdf">
+      {/* <Pdf targetRef={ref} filename="code-example.pdf">
         {({ toPdf }) => (
           <Button
             variant="contained"
@@ -120,7 +120,7 @@ export default function PaymentConfirmationForm() {
             Print Invoice
           </Button>
         )}
-      </Pdf>
+      </Pdf> */}
     </React.Fragment>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <div>
+    <div style={{background:""}}>
       <Container
         maxWidth="sm"
         sx={{
@@ -19,6 +19,7 @@ export default function HeroSection() {
           fontSize={38}
           fontFamily="Raleway"
           fontStyle={"bold"}
+          className="DarkFontsColor"
         >
           Select the housing type
         </Typography>
@@ -28,6 +29,7 @@ export default function HeroSection() {
           color="text.secondary"
           paragraph
           fontSize={14}
+          className="DarkFontsColor"
         >
           Select your own house based on your budget, and suitable for you and
           precious family

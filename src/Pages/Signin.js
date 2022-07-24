@@ -17,10 +17,11 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import cover from "../ss.png";
 import BedIcon from "@mui/icons-material/Bed";
-import { GoogleLogin } from "react-google-login";
+// import { GoogleLogin } from "react-google-login";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import ComingSoonModal from "../Component/ComingSoonModal";
+import GoogleLogin from "react-google-login";
 
 function Copyright(props) {
   return (
@@ -128,6 +129,7 @@ export default function Signin() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                className="textFieldSignInDark"
               />
               <TextField
                 margin="normal"

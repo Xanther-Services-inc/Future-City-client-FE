@@ -22,7 +22,7 @@ import { StepsForm } from "./Pages/StepsForm";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App Darkbackground DarkFontsColor">
       <Routes>
         <Route path="/" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />

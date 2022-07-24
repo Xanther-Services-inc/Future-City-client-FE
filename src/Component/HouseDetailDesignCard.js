@@ -14,7 +14,7 @@ import background4 from "../Images/house4.jpg";
 export const HouseDetailsDesignCard = (housingData) => {
   console.log(housingData, "housing >>>>>>>>>>>>>>>>>>>>>");
   return (
-    <Card className="col-3 cardSpacing">
+    <Card className="col-3 cardSpacing DarkCard">
       <div
         style={{
           marginTop: "5%",
@@ -47,14 +47,16 @@ export const HouseDetailsDesignCard = (housingData) => {
 
         <div className="row">
           <div className="col">
-            <div className="shortComplexDetail">
+            <div className="shortComplexDetail DarkFontsColor">
               <h5>{housingData?.housingData?.name}</h5>
               <p style={{ fontWeight: "400" }}>
                 {housingData?.housingData?.region}
               </p>
               {housingData?.housingData?.complexType === "Social-Housing" ? (
                 <>
-                  <strong>R1,850 - R22,000</strong>{" "}
+                <div className="DarkPricingContainer">
+                  Income Range: <strong>R1,850 - R22,000</strong>
+                  </div>
                   {/* <Button
                     sx={{
                       backgroundColor: "#ffc107",
@@ -69,12 +71,11 @@ export const HouseDetailsDesignCard = (housingData) => {
                     }}
                   > */}
                   <a
-                    className="btn btn-primary"
+                    className="btn btn-primary DarkButtonBackground"
                     href={"/housing/" + housingData?.housingData?.complexId}
                     style={{
                       color: "white",
                       textDecoration: "none",
-                      background: "#00022e",
                     }}
                   >
                     Apply{" "}
