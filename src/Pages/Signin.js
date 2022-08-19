@@ -69,7 +69,7 @@ export default function Signin() {
         userImage: response.uv.v0,
       }
     );
-    console.log(loginResp.data);
+    console.log(loginResp.data, ">>>>>>>>>>>>>>>>");
     if (loginResp.data.status === 200) {
       console.log("indise if block");
       const cookies = new Cookies();

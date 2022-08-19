@@ -39,12 +39,13 @@ export default function MenuAppBar() {
   };
   useEffect(() => {
     if (cookies.get("token") === undefined) {
-      window.location.href = "/";
+      // window.location.href = "/";
     } else {
-      const jwt = cookies.get("token");
-      const decoded = jwt_decode(jwt);
-      setUserName(decoded.userName);
-      console.log(decoded);
+      // const jwt = cookies.get("token");
+      // const decoded = jwt_decode(jwt);
+      // setUserName(decoded.userName);
+      setUserName("Ravi")
+      // console.log(decoded);
     }
   }, []);
 
