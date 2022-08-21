@@ -62,18 +62,19 @@ export default function Signin() {
     const loginResp = await axios.post(
       "https://futurecity.majhailcollection.in/api/signup",
       {
-        userName: response.uv.Af,
-        userEmail: response.uv.gw,
-        socialKey: response.uv.gY,
+        userName: response.profileObj.givenName,
+        userEmail: response.profileObj.email,
+        socialKey: response.profileObj.googleId,
         signupType: "google",
-        userImage: response.uv.v0,
+        userImage: response.profileObj.imageUrl,
       }
     );
-    console.log(loginResp.data, ">>>>>>>>>>>>>>>>");
+    console.log(loginResp.data);
     if (loginResp.data.status === 200) {
       console.log("indise if block");
       const cookies = new Cookies();
       cookies.set("token", loginResp.data.data.token);
+      // console.log(loginResp.data);
       localStorage.setItem("authenticated", true);
       window.location.href = "/housingpage";
     } else {

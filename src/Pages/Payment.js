@@ -53,7 +53,7 @@ export default function Payment() {
             margin: "auto",
             padding: "20px",
             marginTop: "5%",
-            backgroundColor: "#FAFAFA",
+            // backgroundColor: "#FAFAFA",
           }}
         >
           <PaymentForm />

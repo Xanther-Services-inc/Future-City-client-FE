@@ -132,6 +132,7 @@ export const StepsForm = () => {
   let savedImages = [];
 
   const handleSubmit = async () => {
+
     setFormStep(formStep + 1);
     const formData = new FormData();
     formData.append("selectedFile", idFile);
@@ -922,6 +923,7 @@ export const StepsForm = () => {
                         id="inputTag"
                         type="file"
                         onChange={handleIdFile}
+                        required
                       />
                     </label>
                     <label className="selectedFilename">
@@ -939,6 +941,7 @@ export const StepsForm = () => {
                         id="inputTag1"
                         type="file"
                         onChange={handleBankStatementFile}
+                        required
                       />
                     </label>
                     <label className="selectedFilename">
@@ -958,6 +961,7 @@ export const StepsForm = () => {
                         id="inputTag2"
                         type="file"
                         onChange={handleSalarySlip}
+                        required
                       />
                     </label>
                     <label className="selectedFilename">
@@ -975,6 +979,7 @@ export const StepsForm = () => {
                         id="inputTag3"
                         type="file"
                         onChange={handleAddressProof}
+                        required
                       />
                     </label>
                     <label className="selectedFilename">
@@ -992,6 +997,7 @@ export const StepsForm = () => {
                         id="inputTag4"
                         type="file"
                         onChange={handlePaymentProof}
+                        required
                       />
                     </label>
                     <label className="selectedFilename">
@@ -1006,7 +1012,25 @@ export const StepsForm = () => {
                   Back
                 </button>
                 &nbsp;&nbsp;
-                <button className="btn btn-primary" onClick={handleSubmit}>
+                <button className="btn btn-primary" 
+                
+                onClick={() => {
+                  console.log(idFile, "sadasdadasd");
+                  if (
+                    idFile == undefined || bankStatementFile == undefined || salarySlip == undefined || addressProof == undefined || paymentProof == undefined
+                  ) {
+                    swal(
+                      "Opps!",
+                      "All Documents are required",
+                      "error"
+                    );
+                  } else {
+                    handleSubmit();
+                  }
+                }}
+                
+                // onClick={handleSubmit}
+                >
                   {/* <button className="btn btn-primary" onClick={handleNext}> */}
                   Submit
                 </button>

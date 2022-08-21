@@ -14,24 +14,30 @@ import background4 from "../Images/house4.jpg";
 export const HouseDetailsDesignCard = (housingData) => {
   console.log(housingData, "housing >>>>>>>>>>>>>>>>>>>>>");
   return (
-    <Card className="col-3 cardSpacing DarkCard">
-      <div
-        style={{
-          marginTop: "5%",
-          marginLeft: "2.5%",
-        }}
-      >
-        <Carousel fade>
-          {housingData?.housingData.complexImages.map((value, index) => (
-            <Carousel.Item interval={10000} key={index}>
-              <div
-                className="carousalItem"
-                style={{ backgroundImage: `url(${value})` }}
-              ></div>
-            </Carousel.Item>
-          ))}
+    <div className="col-3">
+      <Card className="cardSpacing DarkCard" style={{paddingRight:"5px"}}>
+        <div
+          style={{
+            marginTop: "5%",
+            marginLeft: "2.5%",
+          }}
+        >
+          <Carousel fade>
+            {housingData?.housingData.complexImages.map((value, index) => (
+              <Carousel.Item interval={10000} key={index}>
+                <div
+                  className="carousalItem"
+                  style={{
+                    backgroundImage: `url(${
+                      "https://futurecity.majhailcollection.in/" +
+                      value.split("http://44.206.163.98:3000/")[1]
+                    })`,
+                  }}
+                ></div>
+              </Carousel.Item>
+            ))}
 
-          {/* <Carousel.Item interval={10000}>
+            {/* <Carousel.Item interval={10000}>
           <div
             className="carousalItem"
             style={{ backgroundImage: `url(${background2})` }}
@@ -43,21 +49,21 @@ export const HouseDetailsDesignCard = (housingData) => {
             style={{ backgroundImage: `url(${background})` }}
           ></div>
         </Carousel.Item> */}
-        </Carousel>
+          </Carousel>
 
-        <div className="row">
-          <div className="col">
-            <div className="shortComplexDetail DarkFontsColor">
-              <h5>{housingData?.housingData?.name}</h5>
-              <p style={{ fontWeight: "400" }}>
-                {housingData?.housingData?.region}
-              </p>
-              {housingData?.housingData?.complexType === "Social-Housing" ? (
-                <>
-                <div className="DarkPricingContainer">
-                  Income Range: <strong>R1,850 - R22,000</strong>
-                  </div>
-                  {/* <Button
+          <div className="row">
+            <div className="col">
+              <div className="shortComplexDetail DarkFontsColor">
+                <h5>{housingData?.housingData?.name}</h5>
+                <p style={{ fontWeight: "400" }}>
+                  {housingData?.housingData?.region}
+                </p>
+                {housingData?.housingData?.complexType === "Social-Housing" ? (
+                  <>
+                    <div className="DarkPricingContainer">
+                      Income Range: <strong>R1,850 - R22,000</strong>
+                    </div>
+                    {/* <Button
                     sx={{
                       backgroundColor: "#ffc107",
                       borderColor: "#ffc107",
@@ -70,26 +76,27 @@ export const HouseDetailsDesignCard = (housingData) => {
                       marginBottom: "5px",
                     }}
                   > */}
-                  <a
-                    className="btn btn-primary DarkButtonBackground"
-                    href={"/housing/" + housingData?.housingData?.complexId}
-                    style={{
-                      color: "white",
-                      textDecoration: "none",
-                    }}
-                  >
-                    Apply{" "}
-                  </a>
-                  <br />
-                  {/* </Button> */}
-                </>
-              ) : (
-                ""
-              )}
+                    <a
+                      className="btn btn-primary DarkButtonBackground"
+                      href={"/housing/" + housingData?.housingData?.complexId}
+                      style={{
+                        color: "white",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Apply{" "}
+                    </a>
+                    <br />
+                    {/* </Button> */}
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 };

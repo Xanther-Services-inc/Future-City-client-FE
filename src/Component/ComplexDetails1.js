@@ -93,7 +93,14 @@ export const ComplexDetails1 = () => {
             <div className="row" style={{ margin: "24px" }}>
               <div
                 className="col imagesSpacing"
-                style={{ backgroundImage: `url(${housing?.complexImages[0]})` }}
+                style={{
+                  backgroundImage: `url(${
+                    "https://futurecity.majhailcollection.in/" +
+                    housing?.complexImages[0].split(
+                      "http://44.206.163.98:3000/"
+                    )[1]
+                  })`,
+                }}
               ></div>
               <div className="col imagesSpacing">
                 <div className="row">
@@ -102,8 +109,14 @@ export const ComplexDetails1 = () => {
                     style={{
                       backgroundImage: `url(${
                         housing?.complexImages.length > 1
-                          ? housing?.complexImages[1]
-                          : housing?.complexImages[0]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[1].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
+                          : "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[0].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                       })`,
                     }}
                   ></div>
@@ -112,10 +125,19 @@ export const ComplexDetails1 = () => {
                     style={{
                       backgroundImage: `url(${
                         housing?.complexImages.length > 2
-                          ? housing?.complexImages[2]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[2].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                           : housing?.complexImages.length === 2
-                          ? housing?.complexImages[1]
-                          : housing?.complexImages[0]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[1].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
+                          : "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[0].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                       })`,
                     }}
                   ></div>
@@ -126,12 +148,24 @@ export const ComplexDetails1 = () => {
                     style={{
                       backgroundImage: `url(${
                         housing?.complexImages.length > 3
-                          ? housing?.complexImages[3]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[3].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                           : housing?.complexImages.length === 3
-                          ? housing?.complexImages[2]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[2].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                           : housing?.complexImages.length === 2
-                          ? housing?.complexImages[1]
-                          : housing?.complexImages[0]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[1].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
+                          : "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[0].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                       })`,
                     }}
                   ></div>
@@ -140,14 +174,29 @@ export const ComplexDetails1 = () => {
                     style={{
                       backgroundImage: `url(${
                         housing?.complexImages.length >= 5
-                          ? housing?.complexImages[4]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[4].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                           : housing?.complexImages.length === 4
-                          ? housing?.complexImages[3]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[3].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                           : housing?.complexImages.length === 3
-                          ? housing?.complexImages[2]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[2].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                           : housing?.complexImages.length === 2
-                          ? housing?.complexImages[1]
-                          : housing?.complexImages[0]
+                          ? "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[1].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
+                          : "https://futurecity.majhailcollection.in/" +
+                            housing?.complexImages[0].split(
+                              "http://44.206.163.98:3000/"
+                            )[1]
                       })`,
                     }}
                   ></div>
@@ -181,9 +230,12 @@ export const ComplexDetails1 = () => {
                   <div className="row">
                     <div className="col textAlignLeft">
                       {/* <h6 className="housingPrice"> */}
-                      <span>Application Processing Fee {" "} &nbsp;&nbsp;</span>
-                        <span style={{fontSize:"30px"}}>R{parseFloat(housing?.additionalCharges) +
-                          parseFloat(housing?.applicationFee)}</span>
+                      <span>Application Processing Fee &nbsp;&nbsp;</span>
+                      <span style={{ fontSize: "30px" }}>
+                        R
+                        {parseFloat(housing?.additionalCharges) +
+                          parseFloat(housing?.applicationFee)}
+                      </span>
                       {/* </h6> */}
                     </div>
                   </div>
@@ -237,6 +289,8 @@ export const ComplexDetails1 = () => {
             {/* map section comes here */}
             <div>
               <iframe
+                // src={housing.mapsLink}
+                // src="https://www.google.com/maps/place/Phase+5,+Sector+59,+Sahibzada+Ajit+Singh+Nagar,+Punjab+140308/@30.7125452,76.7100359,17z/data=!3m1!4b1!4m5!3m4!1s0x390fee8a9ee7c53f:0x651a4b4633e36d64!8m2!3d30.7125406!4d76.7122246"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.8347616812483!2d27.729733829219885!3d-26.150777795140574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf06520d35b3de6e7!2zMjbCsDA5JzAyLjgiUyAyN8KwNDMnNDkuMCJF!5e1!3m2!1sen!2sin!4v1657513232455!5m2!1sen!2sin"
                 width="600"
                 height="450"

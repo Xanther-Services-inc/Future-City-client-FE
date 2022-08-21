@@ -9,7 +9,7 @@ export default function PaymentForm() {
   return (
     <React.Fragment style={{ color: "#FAFAFA", justifyContent: "center" }}>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={3} >
           <Typography
             variant="h6"
             gutterBottom
@@ -29,7 +29,7 @@ export default function PaymentForm() {
             fullWidth
             autoComplete="shipping address-line1"
             variant="outlined"
-            style={{ backgroundColor: "white" }}
+            className="textFieldSignInDark"
           />
         </Grid>
         <Grid item xs={12}>
@@ -38,7 +38,7 @@ export default function PaymentForm() {
             style={{
               fontSize: "18px",
               fontWeight: "bold",
-              color: "rgba(0, 0, 0, 0.5)",
+              // color: "rgba(0, 0, 0, 0.5)",
             }}
             gutterBottom
             textAlign={"left"}
